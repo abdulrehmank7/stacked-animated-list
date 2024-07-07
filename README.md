@@ -1,5 +1,9 @@
+# Stacked Animated List View flutter
+
+![pub.dev](https://img.shields.io/badge/pub.dev-1.0.0-green)
+
 <div align="left">
-<img src="https://github.com/abdulrehmank7/stacked-animated-list/blob/master/animated_list_preview%20copy.png" width="30%" >
+<img src="https://raw.githubusercontent.com/abdulrehmank7/stacked-animated-list/master/animated_list_preview%20copy.png" width="30%" alt="" >
 </div>
 
 ## Features
@@ -7,7 +11,7 @@
 Create visually stunning animated stacked lists. Transform your static lists into engaging, swipable card views.
 
 <div align="left">
-<img src="https://github.com/abdulrehmank7/stacked-animated-list/blob/master/screen-20240707-171341.gif" width="30%" >
+<img src="https://raw.githubusercontent.com/abdulrehmank7/stacked-animated-list/master/screen-20240707-171341.gif" width="30%" >
 </div>
 
 ## Getting started
