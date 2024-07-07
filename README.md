@@ -1,6 +1,6 @@
 # Stacked Animated List View flutter
 
-![pub.dev](https://img.shields.io/badge/pub.dev-1.0.0-green)
+![pub.dev](https://img.shields.io/badge/pub.dev-1.0.1-green)
 
 <div align="left">
 <img src="https://raw.githubusercontent.com/abdulrehmank7/stacked-animated-list/master/animated_list_preview%20copy.png" width="30%" alt="" >
@@ -21,7 +21,7 @@ add dependency to your `pubspec.yaml` file
 ```yaml
 
 dependencies:
-  stacked_animated_list: ^1.0.0
+  stacked_animated_list: ^1.0.1
 
 ```
 import package in your dart file

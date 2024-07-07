@@ -15,7 +15,7 @@ topics:
   - stacked
   - animated
   - listview
-version: 1.0.0
+version: 1.0.1
 
 environment:
   sdk: '>=3.1.2 <4.0.0'
