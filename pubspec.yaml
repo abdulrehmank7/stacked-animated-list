@@ -3,7 +3,12 @@ description: Create visually stunning animated stacked lists. Transform your sta
 homepage: https://github.com/abdulrehmank7/stacked-animated-list
 repository: https://github.com/abdulrehmank7/stacked-animated-list
 issue_tracker: https://github.com/abdulrehmank7/stacked-animated-list/issues
-screenshots: https://github.com/abdulrehmank7/stacked-animated-list/blob/master/animated_list_preview%20copy.png
+screenshots:
+  - description: 'This screenshot show the animated list in action.'
+    path: animated_list_preview copy.png
+  - description: 'This screenshot show the animated list in action.'
+    path: screen-20240707-171341.gif
+
 topics:
   - animation
   - list
