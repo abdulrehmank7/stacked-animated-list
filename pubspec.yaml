@@ -1,0 +1,23 @@
+name: stacked_animated_list
+description: Create animated stacked list with smooth animation.
+version: 1.0.0
+homepage:
+
+environment:
+  sdk: '>=3.1.2 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  collection: ^1.17.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  dartdoc: ^6.3.0
+
+# The following section is specific to Flutter packages.
+flutter:
