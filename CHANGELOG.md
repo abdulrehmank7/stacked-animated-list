@@ -1,3 +1,2 @@
-## 0.0.1
-
-* TODO: Describe initial release.
+## 1.0.0
+Create visually stunning animated stacked lists. Transform your static lists into engaging, swipable card views.

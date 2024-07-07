@@ -3,7 +3,6 @@ import 'package:stacked_animated_list/models/stacked_item.dart';
 import 'package:stacked_animated_list/ui/focused_transformed_item_widget.dart';
 import 'package:stacked_animated_list/ui/unfocused_transformed_item_widget.dart';
 import 'package:stacked_animated_list/utils/animated_stack_list_mixin.dart';
-import 'package:stacked_animated_list/utils/item_position_type.dart';
 
 class TransformedListItemWidget extends StatelessWidget
     with AnimatedStackListMixin {

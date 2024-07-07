@@ -8,15 +8,21 @@ import 'package:stacked_animated_list/utils/animated_stack_list_mixin.dart';
 
 class StackedListWidget extends StatefulWidget {
   final List<Widget> listItems;
-  final Duration animationDuration;
   final double listItemWidth;
+  final Duration animationDuration;
   final BorderRadiusGeometry? borderRadius;
+  final double rotationAngle;
+  final double additionalTranslateOffsetBeyondScreen;
+  final List<BoxShadow>? focusedItemShadow;
 
   const StackedListWidget({
     required this.listItems,
     required this.listItemWidth,
     this.animationDuration = const Duration(milliseconds: 350),
     this.borderRadius = const BorderRadius.all(Radius.circular(16)),
+    this.rotationAngle = 15,
+    this.additionalTranslateOffsetBeyondScreen = 0,
+    this.focusedItemShadow,
     super.key,
   });
 
@@ -70,6 +76,10 @@ class _StackedListWidgetState extends State<StackedListWidget>
                   widgetWidth: widget.listItemWidth,
                   focusedWidget: isFirstItem,
                   borderRadius: widget.borderRadius,
+                  rotationAngle: widget.rotationAngle,
+                  additionalTranslateOffsetBeyondScreen:
+                      widget.additionalTranslateOffsetBeyondScreen,
+                  focusedItemShadow: widget.focusedItemShadow,
                   onDragEnded: () {
                     final refreshList = refreshedStackedItems(_stackWidgets);
                     _stackWidgets.clear();

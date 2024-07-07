@@ -1,7 +1,16 @@
 name: stacked_animated_list
-description: Create animated stacked list with smooth animation.
+description: Create visually stunning animated stacked lists. Transform your static lists into engaging, swipable card views.
+homepage: https://github.com/abdulrehmank7/stacked-animated-list
+repository: https://github.com/abdulrehmank7/stacked-animated-list
+issue_tracker: https://github.com/abdulrehmank7/stacked-animated-list/issues
+screenshots: https://github.com/abdulrehmank7/stacked-animated-list/blob/master/animated_list_preview%20copy.png
+topics:
+  - animation
+  - list
+  - stacked
+  - card
+  - animated list
 version: 1.0.0
-homepage:
 
 environment:
   sdk: '>=3.1.2 <4.0.0'

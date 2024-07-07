@@ -4,7 +4,7 @@
 
 ## Features
 
-Create beautiful animated stacked list. Convert your boring list to swipable card list list view.
+Create visually stunning animated stacked lists. Transform your static lists into engaging, swipable card views.
 
 <div align="left">
 <img src="https://github.com/abdulrehmank7/stacked-animated-list/blob/master/screen-20240707-171341.gif" width="30%" >
