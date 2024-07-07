@@ -1,39 +1,112 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+<div align="left">
+<img src="https://github.com/abdulrehmank7/stacked-animated-list/blob/master/animated_list_preview%20copy.png" width="30%" >
+</div>
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Create beautiful animated stacked list. Convert your boring list to swipable card list list view.
+
+<div align="left">
+<img src="https://github.com/abdulrehmank7/stacked-animated-list/blob/master/screen-20240707-171341.gif" width="30%" >
+</div>
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+add dependency to your `pubspec.yaml` file
 
-## Usage
+```yaml
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+dependencies:
+  stacked_animated_list: ^1.0.0
+
+```
+import package in your dart file
 
 ```dart
-const like = 'sample';
+
+import 'package:stacked_animated_list/ui/stacked_list_widget.dart';
+
+```
+## Usage
+
+Add `StackedListWidget` to your widget and pass the list of widget that you want to display. 
+
+```dart
+
+import 'package:stacked_animated_list/ui/stacked_list_widget.dart';
+
+const images = [
+  Assets.imagesOnepeice,
+  Assets.imagesNarutoi,
+  Assets.imagesStone,
+  Assets.imagesWindbreaker,
+];
+
+class HomeScreenWidget extends StatelessWidget {
+  const HomeScreenWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    const cardWidth = 220.0;
+
+    final listItems = images.mapIndexed((index, image) {
+      return SizedBox(
+        width: cardWidth,
+        child: AspectRatio(
+          aspectRatio: .66,
+          child: Image.asset(
+            image,
+            fit: BoxFit.cover,
+          ),
+        ),
+      );
+    }).toList();
+    
+    return Scaffold(
+      body: StackedListWidget(
+        listItems: listItems,
+        listItemWidth: cardWidth,
+      ),
+    );
+  }
+}
+
+
 ```
 
-## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+## Additional configuration available
+```dart
+
+    StackedListWidget(
+        listItems: listItems,
+        listItemWidth: cardWidth,
+        animationDuration: const Duration(milliseconds: 350),
+        borderRadius: BorderRadius.circular(16),
+        rotationAngle: 10,
+        additionalTranslateOffsetBeyondScreen: 50,
+        focusedItemShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.26),
+            blurRadius: 28,
+            spreadRadius: 8,
+            offset: const Offset(8, 16),
+          ),
+          BoxShadow(
+            color: Colors.black.withOpacity(0.26),
+            blurRadius: 28,
+            spreadRadius: 8,
+            offset: const Offset(-8, 2),
+          ),
+        ],
+      )
+
+```
+| Parameter                               | Description                                                                                         |
+|-----------------------------------------|-----------------------------------------------------------------------------------------------------|
+| `animationDuration`            | The animation duration of card movement.                                                            |
+| `borderRadius`    | Border radius of the card in the stacked list.                                                      |
+| `rotationAngle`                  | Rotation angle at which the card should be rotated. Higher the angle, higher the card rotation.     |
+| `additionalTranslateOffsetBeyondScreen` | Additional horizontal offset of unfocused card. This will move the unfocused card outside of screen as per the provided value. |
+| `focusedItemShadow`    | Focused card shadow customization parameter.                                                        |
+
