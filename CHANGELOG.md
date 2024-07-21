@@ -1,2 +1,3 @@
-## 1.0.1
-Updated readme file.
+## 1.0.2
+Added click callback for center card.
+```

@@ -68,6 +68,7 @@ mixin AnimatedStackListMixin {
           positionType: positionType,
           positionTypeForNextItem: positionTypeForNextItem,
           widget: listItems[index],
+          baseIndex: index,
         ),
       );
     }

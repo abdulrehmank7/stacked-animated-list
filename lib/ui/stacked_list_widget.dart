@@ -14,6 +14,8 @@ class StackedListWidget extends StatefulWidget {
   final double rotationAngle;
   final double additionalTranslateOffsetBeyondScreen;
   final List<BoxShadow>? focusedItemShadow;
+  final void Function(int index)? onCenterCardClick;
+  final int longPressDelay;
 
   const StackedListWidget({
     required this.listItems,
@@ -23,6 +25,8 @@ class StackedListWidget extends StatefulWidget {
     this.rotationAngle = 15,
     this.additionalTranslateOffsetBeyondScreen = 0,
     this.focusedItemShadow,
+    this.onCenterCardClick,
+    this.longPressDelay = 400,
     super.key,
   });
 
@@ -80,6 +84,8 @@ class _StackedListWidgetState extends State<StackedListWidget>
                   additionalTranslateOffsetBeyondScreen:
                       widget.additionalTranslateOffsetBeyondScreen,
                   focusedItemShadow: widget.focusedItemShadow,
+                  onCenterCardClick: widget.onCenterCardClick,
+                  longPressDelay: widget.longPressDelay,
                   onDragEnded: () {
                     final refreshList = refreshedStackedItems(_stackWidgets);
                     _stackWidgets.clear();

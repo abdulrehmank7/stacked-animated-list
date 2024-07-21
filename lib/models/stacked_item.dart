@@ -5,10 +5,12 @@ class StackedItem {
   final Widget widget;
   ItemPositionType positionType;
   ItemPositionType positionTypeForNextItem;
+  final int baseIndex;
 
   StackedItem({
     required this.widget,
     required this.positionType,
     required this.positionTypeForNextItem,
+    required this.baseIndex,
   });
 }

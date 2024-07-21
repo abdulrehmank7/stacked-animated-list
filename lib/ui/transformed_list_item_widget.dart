@@ -6,6 +6,7 @@ import 'package:stacked_animated_list/utils/animated_stack_list_mixin.dart';
 
 class TransformedListItemWidget extends StatelessWidget
     with AnimatedStackListMixin {
+  final void Function(int index)? onCenterCardClick;
   final StackedItem stackedItem;
   final double widgetWidth;
   final bool focusedWidget;
@@ -15,6 +16,7 @@ class TransformedListItemWidget extends StatelessWidget
   final double rotationAngle;
   final double additionalTranslateOffsetBeyondScreen;
   final List<BoxShadow>? focusedItemShadow;
+  final int longPressDelay;
 
   const TransformedListItemWidget({
     super.key,
@@ -24,9 +26,11 @@ class TransformedListItemWidget extends StatelessWidget
     required this.onDragEnded,
     required this.animation,
     this.borderRadius = const BorderRadius.all(Radius.circular(16)),
-    this.rotationAngle = 15,
-    this.additionalTranslateOffsetBeyondScreen = 0,
+    required this.rotationAngle,
+    required this.additionalTranslateOffsetBeyondScreen,
     this.focusedItemShadow,
+    this.onCenterCardClick,
+    required this.longPressDelay,
   });
 
   @override
@@ -38,13 +42,20 @@ class TransformedListItemWidget extends StatelessWidget
     );
 
     if (focusedWidget) {
-      final childWidget = Container(
-        clipBehavior: Clip.antiAlias,
-        decoration: BoxDecoration(
-          boxShadow: focusedItemShadow ?? defaultFocusedItemShadow(),
-          borderRadius: borderRadius,
+      final childWidget = GestureDetector(
+        onTap: () {
+          if (onCenterCardClick != null) {
+            onCenterCardClick!(stackedItem.baseIndex);
+          }
+        },
+        child: Container(
+          clipBehavior: Clip.antiAlias,
+          decoration: BoxDecoration(
+            boxShadow: focusedItemShadow ?? defaultFocusedItemShadow(),
+            borderRadius: borderRadius,
+          ),
+          child: stackedItem.widget,
         ),
-        child: stackedItem.widget,
       );
 
       final animatedFromPosType = stackedItem.positionTypeForNextItem.reverse;
@@ -54,7 +65,7 @@ class TransformedListItemWidget extends StatelessWidget
         child: LongPressDraggable(
           feedback: childWidget,
           childWhenDragging: const SizedBox.shrink(),
-          delay: const Duration(milliseconds: 10),
+          delay: Duration(milliseconds: longPressDelay),
           child: childWidget,
           onDragEnd: (details) {
             if (isItemFlicked(details)) onDragEnded();

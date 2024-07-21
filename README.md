@@ -1,6 +1,6 @@
 # Stacked Animated List View flutter
 
-![pub.dev](https://img.shields.io/badge/pub.dev-1.0.1-green)
+![pub.dev](https://img.shields.io/badge/pub.dev-1.0.2-green)
 
 <div align="left">
 <img src="https://raw.githubusercontent.com/abdulrehmank7/stacked-animated-list/master/animated_list_preview%20copy.png" width="30%" alt="" >
@@ -21,7 +21,7 @@ add dependency to your `pubspec.yaml` file
 ```yaml
 
 dependencies:
-  stacked_animated_list: ^1.0.1
+  stacked_animated_list: ^1.0.2
 
 ```
 import package in your dart file
@@ -89,6 +89,10 @@ class HomeScreenWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         rotationAngle: 10,
         additionalTranslateOffsetBeyondScreen: 50,
+        longPressDelay: 300,
+        onCenterCardClick: (index) {
+          print('Center card clicked: $index');
+        },
         focusedItemShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.26),
@@ -113,4 +117,6 @@ class HomeScreenWidget extends StatelessWidget {
 | `rotationAngle`                  | Rotation angle at which the card should be rotated. Higher the angle, higher the card rotation.     |
 | `additionalTranslateOffsetBeyondScreen` | Additional horizontal offset of unfocused card. This will move the unfocused card outside of screen as per the provided value. |
 | `focusedItemShadow`    | Focused card shadow customization parameter.                                                        |
+| `longPressDelay`    | Long press delay to trigger the card movement.                                                      |
+| `onCenterCardClick`    | Callback when the center card is clicked.                                                           |
 
